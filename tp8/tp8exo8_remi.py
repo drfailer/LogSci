@@ -17,6 +17,7 @@ def dg(x):
     return 2 - np.exp(x)
 
 
+# Calcule de l'aire avec la méthode de Newton :
 def newt(f, df, x, esp):
     i = 0
     xn = x

@@ -2,7 +2,7 @@ from numpy.random import rand
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+# Retourne un pas aléatoire :
 def un_pas():
     r = rand()
     if r < 0.25:
@@ -14,6 +14,7 @@ def un_pas():
     else:
         return [0, -1]
 
+# Modélisation d'une marche 2D
 def marche_2D(n):
     pos = [0, 0]
     li_pas = [(pos + un_pas()) for i in range(n)]

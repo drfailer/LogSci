@@ -1,6 +1,12 @@
+############################################################
+#                         cac40                            #
+############################################################
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+############################################################
+# Listes :
 co = []
 cc = []
 cma = []
@@ -8,7 +14,8 @@ cmi = []
 dt = []
 Acc = []
 
-with open("cac40.csv", encoding="utf-8") as f:
+# Récupération des données
+with open("./resources/cac40.csv", encoding="utf-8") as f:
     for ligne in f:
         ligne.replace(',','.')
         tabl = ligne.split(';')
@@ -17,16 +24,18 @@ with open("cac40.csv", encoding="utf-8") as f:
         cc.append(float(tabl[5]))
         cma.append(float(tabl[3]))
         cmi.append(float(tabl[4]))
-       
 
-        
+############################################################
 
-##### 1
 
+# Question 1 :
+# nombre de jours
 print("il y avait ",len(dt),"jours dans ce fichier");
 
 
-##### 2
+# Question 2 :
+# Date du cours d'ouverture le plus bas
+# BUG:
 co_min = co[0]
 min = 0
 for i in range(1,len(co)):
@@ -34,10 +43,12 @@ for i in range(1,len(co)):
         co_min = co[i]
         min = i
 
-print("Le cours d'ouverture le plus bas était en ",dt[i]);
+# Deux résultats differents
+print("Le cours d'ouverture le plus bas était en ",dt[i])
+print("Le cours d'ouverture le plus bas était en ",dt[np.argmin(co)])
 
-##### 3
-
+# Question 3
+# Accroissement journalier entre la cloture et la fermeture
 infSup = [0,0]
 strategie = 0
 
@@ -55,8 +66,8 @@ for i in range(len(cc)):
 #### plt.show()
 
 
-##### 4
-
+# Question 4 :
+# Stratégie: achat à l'ouverture et vente à la cloture
 print("La stratégie nous rapporte",strategie);
 
 index = np.arange(2)
@@ -69,4 +80,7 @@ plt.title('comparaison inférieur/supérieur')
 plt.legend()
 plt.show()
 
-## On observe que même si il y avait presque autant de jours avec un accroissement positif que négatif. Notre stratégie nous fait perdre 3000 euro. Ceci s'explque par le fait que les valeurs sont plus grandes lorsque c'est un jour négatif.
+# On observe que même si il y avait presque autant de jours avec un
+# accroissement positif que négatif. Notre stratégie nous fait perdre 3000
+# euro. Ceci s'explque par le fait que les valeurs sont plus grandes lorsque
+# c'est un jour négatif.

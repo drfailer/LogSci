@@ -1,4 +1,3 @@
-
 import numpy as np
 
 def sin(x):
@@ -7,6 +6,7 @@ def sin(x):
 def dsin(x):
     return np.cos(x)
 
+# Calcule de l'aire sous la courbe de f à l'aide de la méthode de Newton :
 def newt(f,df,x,eps):
     i = 0
     while(abs(f(x)) >= eps):

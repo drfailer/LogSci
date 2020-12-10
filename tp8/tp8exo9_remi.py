@@ -49,7 +49,8 @@ for i in range(7, 8, 1):
     print("Sg =", int_rectg(g, -10, 2, nb_rect))
     print("Sd =", int_rectd(g, -10, 2, nb_rect))
     print("St =", int_trap(g, -10, 2, nb_rect))
-# Résultats
+    
+# Résultats :
 # Pour f: 7.954926521012877
 # Pour g: 1.768307217188941
 # Les résultats trouvé par les méthode sont plus proches quand nb_rect grandi

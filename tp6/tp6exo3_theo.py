@@ -3,6 +3,7 @@ import numpy as np
 def compo2(couple):
     return couple[1]
 
+# Listes :
 insee = []
 nom = []
 altitude = []
@@ -12,8 +13,7 @@ latitude_rad = []
 pop = []
 surface = []
 
-
-# Trouver la ville la plus au nord
+# Récupération des données :
 with open("./villes.csv", encoding="utf-8") as f:
     for num,line in enumerate(f):
         if num != 0:
