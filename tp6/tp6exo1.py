@@ -35,16 +35,15 @@ print("il y avait ",len(dt),"jours dans ce fichier");
 
 # Question 2 :
 # Date du cours d'ouverture le plus bas
-# BUG:
 co_min = co[0]
-min = 0
+minimum = 0
 for i in range(1,len(co)):
     if(co_min > co[i]):
         co_min = co[i]
-        min = i
+        minimum = i
 
-# Deux résultats differents
-print("Le cours d'ouverture le plus bas était en ",dt[i])
+# Deux résultats différents
+print("Le cours d'ouverture le plus bas était en ",dt[minimum])
 print("Le cours d'ouverture le plus bas était en ",dt[np.argmin(co)])
 
 # Question 3
